@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <title>AreadeAtendimento</title>
+  </head>
+  <body>
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image"> </span>
+
+          <div class="text logo-text">
+            <span class="name" style="font-size: 25px">Services </span>
+          </div>
+        </div>
+
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="search-box">
+            <i class="bx bx-search icon"></i>
+            <input
+              id="search-input"
+              type="text"
+              placeholder="Ultimos pedidos"
+            />
+          </li>
+
+          <ul class="menu-links">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="#" id="equipamentos-link" onclick="openZendeskChat()">
+                  <i
+                    class="bx bx-mobile"
+                    style="margin-left: 20px; font-size: 20px; color: black"
+                  ></i>
+                  <span class="text nav-text" style="margin-left: 20px"
+                    >EQUIPAMENTOS</span
+                  >
+                </a>
+              </li>
+
+              <div class="support-container">
+                <li class="nav-link">
+                  <a href="#" id="suporte-link" onclick="openZendeskChat()">
+                    <i
+                      class="bx bx-headphone"
+                      style="margin-left: 20px; font-size: 20px; color: black"
+                    ></i>
+                    <span class="text nav-text" style="margin-left: 20px"
+                      >SUPORTE</span
+                    >
+                  </a>
+                </li>
+              </div>
+
+              <li class="nav-link">
+                <a href="#" id="atendimentos-link" onclick="openZendeskChat()">
+                  <i
+                    class="bx bx-folder-open"
+                    style="margin-left: 20px; font-size: 20px; color: black"
+                  ></i>
+                  <span class="text nav-text" style="margin-left: 20px"
+                    >ATENDIMENTOS</span
+                  >
+                </a>
+              </li>
+
+              <li class="nav-link">
+                <a href="#" id="financeiro-link" onclick="openZendeskChat()">
+                  <i class="bx bx-wallet icon" style="color: black"></i>
+                  <span class="text nav-text">FINACEIRO</span>
+                </a>
+              </li>
+
+              <li class="nav-link">
+                <a href="#" id="anomalia-link" onclick="openZendeskChat()">
+                  <i
+                    class="bx bxs-alarm-off"
+                    style="margin-left: 20px; font-size: 20px; color: black"
+                  ></i>
+                  <span class="text nav-text" style="margin-left: 20px"
+                    >ANOMALIA</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </ul>
+        </div>
+
+        <div class="bottom-content">
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+    <section class="home">
+      <div class="text">
+        Area de atendimento dedicada DASH/ZENDESCK - PROJETO PANDORA
+      </div>
+      <div id="iframe-container"></div>
+      <section></section>
+    </section>
+    <script></script>
+    <script src="/zd.js"></script>
+  </body>
+</html>
