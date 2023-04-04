@@ -122,9 +122,68 @@
         Area de atendimento dedicada DASH/ZENDESCK - PROJETO PANDORA
       </div>
       <div id="iframe-container"></div>
-      <section></section>
     </section>
-    <script></script>
     <script src="/zd.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js").then(
+            function (registration) {
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+
+              // Verifica se o usuário não instalou o app ainda
+              if (
+                !window.matchMedia("(display-mode: standalone)").matches &&
+                !window.navigator.standalone
+              ) {
+                // Mostra um prompt para o usuário instalar o app
+                var installPromptEvent;
+                window.addEventListener(
+                  "beforeinstallprompt",
+                  function (event) {
+                    // Salva o evento para disparar depois
+                    installPromptEvent = event;
+
+                    // Mostra um botão para o usuário instalar o app
+                    var btnInstall = document.createElement("button");
+                    btnInstall.innerText = "Instalar App";
+                    btnInstall.addEventListener("click", function () {
+                      // Dispara o evento para o usuário instalar o app
+                      installPromptEvent.prompt();
+
+                      // Aguarda o usuário tomar uma ação
+                      installPromptEvent.userChoice.then(function (
+                        choiceResult
+                      ) {
+                        console.log(choiceResult.outcome);
+
+                        // Verifica se o usuário instalou o app
+                        if (choiceResult.outcome === "accepted") {
+                          console.log("O usuário instalou o app");
+                        } else {
+                          console.log("O usuário não instalou o app");
+                        }
+
+                        // Limpa o evento para não ser disparado novamente
+                        installPromptEvent = null;
+                      });
+                    });
+
+                    // Adiciona o botão à página
+                    document.body.appendChild(btnInstall);
+                  }
+                );
+              }
+            },
+            function (error) {
+              console.log("ServiceWorker registration failed: ", error);
+            }
+          );
+        });
+      }
+    </script>
   </body>
 </html>

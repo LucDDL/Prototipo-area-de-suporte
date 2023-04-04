@@ -326,3 +326,14 @@ body.dark .switch::before {
 body.dark .home .text {
   color: var(--text-color);
 }
+
+#banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
